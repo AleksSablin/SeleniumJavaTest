@@ -21,5 +21,6 @@ public class Test1 {
         searchFiled.click();
         System.out.println("Заголовок страницы - " + driver.getTitle());
         System.out.println("Страница не доступна!");
+
     }
 }
