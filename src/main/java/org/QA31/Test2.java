@@ -25,7 +25,7 @@ public class Test2 {
             e.printStackTrace();
         }
         clickVideo.click(); // выключает видео
-        driver.close(); // закрытие браузера
+        driver.quit(); // закрытие браузера
         System.out.println("Тест пройден успешно!");
     }
 }
