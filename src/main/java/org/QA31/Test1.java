@@ -14,13 +14,19 @@ public class Test1 {
         driver.manage().window().maximize(); // разворачивает браузер на весь экран
         driver.get("https://hippocrates64.ru/"); // открывает сайт
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); // ожидание отображения страницы
-        WebElement renovationLink = driver.findElements(By.linkText("Медицинские работники")).get(0);
+        WebElement renovationLink = driver.findElements(By.linkText("Медицинские работники")).get(0); // открыть страницу "Медицинские работники"
         renovationLink.click();
         WebElement searchFiled = driver.findElement(By.xpath("//*[@id=\"profile_45\"]/ul/li/a"));
-        searchFiled.sendKeys("card.php?idd=45");
+        searchFiled.sendKeys("card.php?idd=45"); // выбрать любого врача
         searchFiled.click();
         System.out.println("Заголовок страницы - " + driver.getTitle());
-        System.out.println("Страница не доступна!");
+        try {
+            Thread.sleep(3000); // задержка 3 секунд
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        driver.quit(); // закрытие браузера
+        System.out.println("Баг - страница не доступна!");
 
     }
 }
